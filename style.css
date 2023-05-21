@@ -1,0 +1,61 @@
+*, *::after, *::before 
+{ margin: 0; padding: 0; box-sizing: border-box; }
+html, body 
+{ height: 100%; }
+body 
+{ background: #141414; color: #bebebe; }
+.colours{
+    color: #141414; color: #313131; color: #575757; color: #aaaaaa; color: #bebebe; color: #dfdfdf;
+    --far_background: #141414; --close_background: #313131; --active_background: #575757; --bright_white: #aaaaaa; --text_active: #bebebe; --text_regular: #dfdfdf;
+}
+
+.input_window{
+    background-color: #313131;
+    color: #dfdfdf; 
+    width: 100%;
+    height: 250px;
+    padding: 20px;
+}
+
+.input_window input{
+    height: 20%;
+    width: 100%;
+    
+    background-color: #575757;
+    color: #dfdfdf; 
+
+    border: 1px solid #aaaaaa;
+    padding: 5px;
+}
+
+.input_window input::placeholder{
+    color: #aaaaaa;
+}
+
+.input_window input:hover, .input_window input:focus{
+    background-color: #aaaaaa;
+    color: #313131;
+
+    
+}
+
+.input_window input:hover::placeholder, .input_window input:focus::placeholder{
+   color: #313131;
+    
+}
+
+.sim{
+    height: 100%;
+
+}
+
+.projectile{
+    height: 35px;
+    width: 35px;
+
+    background-color: blue;
+    border: 2px solid white;
+    border-radius: 100%;
+
+    position: absolute;
+}
