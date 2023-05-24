@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ballistics</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
 </head>
@@ -16,6 +16,11 @@
         <p>Ускорение свободного падения, м/с²</p><input required id="gravity" type="text" placeholder="Ускорение свободного падения" value="9.8"> 
         <p>Плотность среды, кг/м³</p><input required id="density" type="text" placeholder="Плотность среды" value="1.293"> 
         <p>Пока не работает текст в этом месте</p><input type="submit" class="launch" value="Запустить">
+    </div>
+    <div class="display_projections">
+        <div class="horisontal" style="translate: 2px 60px;"></div>
+        <div class="vertical" style="translate: 60px 2px;"></div>
+        <div class="center"></div>
     </div>
     <div class="sim">
         <div class="projectile" style="left: 0px; bottom: 190px;"></div>

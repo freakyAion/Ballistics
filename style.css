@@ -9,6 +9,7 @@ body
     --far_background: #141414; --close_background: #313131; --active_background: #575757; --bright_white: #aaaaaa; --text_active: #bebebe; --text_regular: #dfdfdf;
 }
 
+
 .input_window{
     background-color: #313131;
     color: #dfdfdf; 
@@ -16,7 +17,7 @@ body
     height: 45%;
     padding: 20px;
 
-    z-index: 1;
+    z-index: 2;
 
     display: grid;
     grid-template-columns: 30% 70%;
@@ -86,6 +87,47 @@ body
 
     z-index: 0;
 
-    transition: left 50ms linear,
-                bottom 50ms linear;
+    transition: left 2000ms linear,
+                bottom 2000ms linear;
+}
+
+.display_projections{
+    height: 120px;
+    width: 120px;
+
+    background-color: #575757;
+
+    position: absolute;
+
+}
+
+.display_projections .center{
+    background-color: red;
+    height: 5px;
+    width: 5px;
+
+    margin: 57.5px;
+}
+
+.display_projections .vertical{
+    background-color: greenyellow;
+    display: block;
+    height: 15px;
+    width: 2.5px;
+
+    position: absolute;
+
+    transform-origin: center center;
+
+}
+
+.display_projections .horisontal{
+    background-color: lightskyblue;
+    display: block;
+    height: 2.5px;
+    width: 15px;
+
+    position: absolute;
+
+    transform-origin: center center;
 }
