@@ -54,6 +54,13 @@ function positionCalc(velocityY, velocityX, accelerationX, accelerationY, accele
     {
         setTimeout(()=>
         {
+            // // //
+            // Basically, acceleration is not 0 at start. 
+            // As in, it should be zero after starting, 
+            // so that it wouldn't affect the projectiles movement in the future, 
+            // but it is not yet implemented. 
+            // Sadge.
+            // // //
             let resistanceY = (Cf * ((environmentalDensity * velocityY) / 2 )* surfaceArea) / projectileMass;
             let resistanceX = (Cf * ((environmentalDensity * velocityX) / 2 )* surfaceArea) / projectileMass;
 
