@@ -4,7 +4,7 @@ html, body
 { height: 100%; }
 body 
 { background: #141414; color: #bebebe; }
-.colours{
+:root{
     color: #141414; color: #313131; color: #575757; color: #aaaaaa; color: #bebebe; color: #dfdfdf;
     --far_background: #141414; --close_background: #313131; --active_background: #575757; --bright_white: #aaaaaa; --text_active: #bebebe; --text_regular: #dfdfdf;
 }
@@ -13,15 +13,21 @@ body
     background-color: #313131;
     color: #dfdfdf; 
     width: 100%;
-    height: 250px;
+    height: 45%;
     padding: 20px;
 
     z-index: 1;
 
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: repeat(6, 16.6%);
+
+    font-family: Arial, Helvetica, sans-serif;
+
 }
 
 .input_window input{
-    height: 20%;
+    height: 100%;
     width: 100%;
     
     background-color: #575757;
@@ -29,6 +35,9 @@ body
 
     border: 1px solid #aaaaaa;
     padding: 5px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
 }
 
 .input_window input::placeholder{
@@ -45,6 +54,18 @@ body
 .input_window input:hover::placeholder, .input_window input:focus::placeholder{
    color: #313131;
     
+}
+
+.input_window .launch{
+    
+
+}
+
+.input_window p{
+    text-align: right;
+    margin: auto 0;
+    margin-right: 20px;
+
 }
 
 .sim{
@@ -64,4 +85,7 @@ body
     position: absolute;
 
     z-index: 0;
+
+    transition: left 50ms linear,
+                bottom 50ms linear;
 }
