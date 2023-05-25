@@ -87,8 +87,8 @@ body
 
     z-index: 0;
 
-    transition: left 2000ms linear,
-                bottom 2000ms linear;
+    transition: left 150ms linear,
+                bottom 150ms linear;
 }
 
 .display_projections{

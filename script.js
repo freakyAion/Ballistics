@@ -3,8 +3,10 @@ const angle = document.querySelector("#angle");
 const gravity = document.querySelector("#gravity");
 const density = document.querySelector("#density");
 const mass = document.querySelector("#mass");
-const surfaceArea = (Math.PI * 35/2 * 35/2) / 100;
+const surfaceArea = (Math.PI * 35/2 * 35/2) / 1000;
 const Cf = 0.47;
+
+let simIsRunning = false;
 
 let environmentalDensity = density.value;
 let projectileMass = mass.value
@@ -23,6 +25,15 @@ launch.addEventListener("click", runSim);
 
 function runSim()
 {
+    if(force.value == '' || mass.value == '' || angle.value == '' || gravity.value == '' || density.value == '')
+    {
+        alert("Одно из полей пустое");
+        return;
+    }
+    if(simIsRunning == true) return;
+
+    simIsRunning = true;
+
     let lef_ = projectile.style.left;
         lef_ = lef_.substring(0, lef_.length - 2);
         lef_ -= 0;
@@ -50,30 +61,23 @@ function runSim()
 }
 
 function positionCalc(velocityY, velocityX, accelerationX, accelerationY, accelerationG, bot_, lef_, environmentalDensity, projectileMass){
-    for(let i = 1; i<=100; i++)
+    for(let i = 1; i<=500; i++)
     {
         setTimeout(()=>
         {
-            // // //
-            // Basically, acceleration is not 0 at start. 
-            // As in, it should be zero after starting, 
-            // so that it wouldn't affect the projectiles movement in the future, 
-            // but it is not yet implemented. 
-            // Sadge.
-            // // //
             let resistanceY = (Cf * ((environmentalDensity * velocityY) / 2 )* surfaceArea) / projectileMass;
             let resistanceX = (Cf * ((environmentalDensity * velocityX) / 2 )* surfaceArea) / projectileMass;
 
-            resistanceX *= 0.01;
-            resistanceY *= 0.01;
+            resistanceX *= 0.3;
+            resistanceY *= 0.3;
 
             accelerationY -= accelerationG;
 
             accelerationX -= resistanceX;
             accelerationY -= resistanceY;
 
-            velocityX += accelerationX;
-            velocityY += accelerationY;
+            velocityX = accelerationX;
+            velocityY = accelerationY;
         
         
             lef_ += velocityX;
@@ -96,6 +100,7 @@ function positionCalc(velocityY, velocityX, accelerationX, accelerationY, accele
             console.log("");
             console.log("");
 
-        }, 2000 * i);
+            if(i == 300) simIsRunning = false;
+        }, 150 * i);
     }
 }
