@@ -110,7 +110,12 @@ function positionCalc(velocityY, velocityX, accelerationX, accelerationY, accele
             console.log("");
             console.log("");
 
-            if(i == 50) simIsRunning = false;
+            if(i == 50) 
+            {
+                projectile.style.bottom = "190px";
+                projectile.style.left = "0px";
+                simIsRunning = false
+            };
         }, 150 * i);
     }
 }
