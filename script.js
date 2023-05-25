@@ -83,14 +83,14 @@ function positionCalc(velocityY, velocityX, accelerationX, accelerationY, accele
             lef_ += velocityX;
             bot_ += velocityY;
 
+            projectile.style.bottom = bot_ + "px";
+            projectile.style.left = lef_ + "px";
+
             if ((bot_ < 0) || (lef_ >= borderX))
             {
                 bot_ = 190;
                 lef_ = 0;
             }
-
-            projectile.style.bottom = bot_ + "px";
-            projectile.style.left = lef_ + "px";
 
             console.log("Done, Iteration №" + i);
             console.log("Debug Data");
@@ -110,7 +110,7 @@ function positionCalc(velocityY, velocityX, accelerationX, accelerationY, accele
             console.log("");
             console.log("");
 
-            if(i == 300) simIsRunning = false;
+            if(i == 50) simIsRunning = false;
         }, 150 * i);
     }
 }
