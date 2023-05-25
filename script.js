@@ -61,7 +61,7 @@ function runSim()
 }
 
 function positionCalc(velocityY, velocityX, accelerationX, accelerationY, accelerationG, bot_, lef_, environmentalDensity, projectileMass){
-    for(let i = 1; i<=500; i++)
+    for(let i = 1; i<=50; i++)
     {
         setTimeout(()=>
         {
@@ -83,9 +83,15 @@ function positionCalc(velocityY, velocityX, accelerationX, accelerationY, accele
             lef_ += velocityX;
             bot_ += velocityY;
 
+            if ((bot_ < 0) || (lef_ >= borderX))
+            {
+                bot_ = 190;
+                lef_ = 0;
+            }
+
             projectile.style.bottom = bot_ + "px";
             projectile.style.left = lef_ + "px";
-        
+
             console.log("Done, Iteration №" + i);
             console.log("Debug Data");
             console.log("");
@@ -95,6 +101,10 @@ function positionCalc(velocityY, velocityX, accelerationX, accelerationY, accele
             console.log("Acceleration on the Y axis is equal to " + accelerationY);
             console.log("Resitance on the X axis is equal to " + resistanceX);
             console.log("Resistance on the Y axis is equal to " + resistanceY);
+            console.log("")
+            console.log("Distance from the bottom " + bot_);
+            console.log("Distance from the left " + lef_);
+
 
             console.log("");
             console.log("");
