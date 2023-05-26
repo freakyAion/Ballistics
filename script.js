@@ -90,6 +90,11 @@ function positionCalc(velocityY, velocityX, accelerationX, accelerationY, accele
             {
                 bot_ = 190;
                 lef_ = 0;
+                accelerationX = 0;
+                accelerationY = 0;
+                accelerationG = 0;
+                velocityX = 0;
+                velocityY = 0;
             }
 
             console.log("Done, Iteration №" + i);
