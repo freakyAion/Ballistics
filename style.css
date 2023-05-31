@@ -133,6 +133,16 @@ body
 
 }
 
+.sim .velocities{
+    background-color: #313131;
+    width: 300px;
+    padding: 5px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+
 .projectile{
     height: 35px;
     width: 35px;

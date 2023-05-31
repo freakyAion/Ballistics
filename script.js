@@ -5,6 +5,9 @@ const density = document.querySelector("#density");
 const mass = document.querySelector("#mass");
 const surfaceArea = (Math.PI * 35/2 * 35/2) / 1000;
 const Cf = 0.47;
+const displayVelocityX = document.getElementById('velocityX');
+const displayVelocityY = document.getElementById('velocityY');
+
 
 const Hide = document.getElementById('hide');
 const Cover = document.querySelector('.cover');
@@ -91,6 +94,10 @@ function positionCalc(velocityY, velocityX, accelerationX, accelerationY, accele
 
             projectile.style.bottom = bot_ + "px";
             projectile.style.left = lef_ + "px";
+
+            displayVelocityX.innerText = velocityX;
+            displayVelocityY.innerText = velocityY;
+
 
             if ((bot_ < 0) || (lef_ >= borderX))
             {
