@@ -14,9 +14,6 @@ Hide.addEventListener('click', ()=>{
 
 let simIsRunning = false;
 
-let environmentalDensity = density.value;
-let projectileMass = mass.value
-
 const borderX = document.querySelector(".sim").offsetWidth;
 const borderY = document.querySelector(".sim").offsetHeight;
 
@@ -39,6 +36,9 @@ function runSim()
     if(simIsRunning == true) return;
 
     simIsRunning = true;
+
+    let environmentalDensity = density.value;
+    let projectileMass = mass.value
 
     let lef_ = projectile.style.left;
         lef_ = lef_.substring(0, lef_.length - 2);
@@ -74,9 +74,9 @@ function positionCalc(velocityY, velocityX, accelerationX, accelerationY, accele
             let resistanceY = (Cf * ((environmentalDensity * velocityY) / 2 )* surfaceArea) / projectileMass;
             let resistanceX = (Cf * ((environmentalDensity * velocityX) / 2 )* surfaceArea) / projectileMass;
 
-            resistanceX *= 0.3;
-            resistanceY *= 0.3;
-
+                resistanceX *= 0.3;
+                resistanceY *= 0.3;
+        
             accelerationY -= accelerationG;
 
             accelerationX -= resistanceX;
