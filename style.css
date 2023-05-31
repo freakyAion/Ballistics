@@ -9,6 +9,64 @@ body
     --far_background: #141414; --close_background: #313131; --active_background: #575757; --bright_white: #aaaaaa; --text_active: #bebebe; --text_regular: #dfdfdf;
 }
 
+.cover{
+    position: absolute;
+    background-color: var(--far_background);
+    height: 100%;
+    width: 100%;
+
+    z-index: 100;
+
+    display: flex;
+    
+    flex-direction: column;
+    justify-content: center;
+    padding: 200px 300px;
+}
+
+.cover h1{
+    font-weight: bold;
+    font-size: 90px;
+    padding-bottom: 20px;
+}
+
+.cover h3{
+    font-size: 30px;
+    padding-bottom: 20px;
+
+}
+
+.cover p{
+    font-size: 25px;
+    padding-bottom: 20px;
+
+
+}
+
+.cover .formula{
+    padding: 5px 30px;
+
+}
+
+.cover button{
+    margin-top: 30px;
+    height: 60px;
+    width: 200px;
+
+    background-color: #575757;
+    color: #dfdfdf; 
+
+    border: 1px solid #aaaaaa;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.cover button:focus,
+.cover button:hover{
+    background-color: #aaaaaa;
+    color: #313131;
+    
+}
 
 .input_window{
     background-color: #313131;
@@ -130,4 +188,9 @@ body
     position: absolute;
 
     transform-origin: center center;
+}
+
+.hide{
+    transform: translateY(-100%);
+    transition: 200ms linear;
 }

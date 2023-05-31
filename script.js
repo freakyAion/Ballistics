@@ -6,6 +6,12 @@ const mass = document.querySelector("#mass");
 const surfaceArea = (Math.PI * 35/2 * 35/2) / 1000;
 const Cf = 0.47;
 
+const Hide = document.getElementById('hide');
+const Cover = document.querySelector('.cover');
+Hide.addEventListener('click', ()=>{
+    Cover.classList.toggle('hide');
+})
+
 let simIsRunning = false;
 
 let environmentalDensity = density.value;
